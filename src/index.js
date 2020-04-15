@@ -4,10 +4,25 @@ import './css/reset.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// rotas
+import { BrowserRouter } from 'react-router-dom';
+
+// redux
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { points } from './reducers/pointReducer'
+
+const store = createStore(
+    points,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

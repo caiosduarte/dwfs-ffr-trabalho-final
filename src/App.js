@@ -4,6 +4,9 @@ import { GoogleApiWrapper, Map, Marker, InfoWindow } from 'google-maps-react';
 import { CurrentMap } from './components/CurrentMap';
 import { MarkerLabel } from './components/MarkerLabel';
 
+import { Link } from 'react-router-dom';
+import { ApplicationRoutes } from './ApplicationRoutes';
+
 export class MapContainer extends Component {
   state = {
     showingInfoWindow: false,  //Hides or the shows the infoWindow
@@ -38,25 +41,28 @@ export class MapContainer extends Component {
   */
   render() {
     return (
-      <CurrentMap
-      google={this.props.google}
-      zoom={14}
-      initialCenter={{ lat: -1.2884, lng: 36.8233 }}
-      >
-      <MarkerLabel
-      onClick={this.onMarkerClick}
-      name={'Kenyatta International Convention Centre'}
-      />
-      <InfoWindow
-      marker={this.state.activeMarker}
-      visible={this.state.showingInfoWindow}
-      onClose={this.onClose}
-      >
-      <div>
-      <h4>{this.state.selectedPlace.name}</h4>
-      </div>
-      </InfoWindow>
-      </CurrentMap>
+      <>
+        <CurrentMap
+        google={this.props.google}
+        zoom={14}
+        initialCenter={{ lat: -1.2884, lng: 36.8233 }}
+        >
+        <MarkerLabel
+        onClick={this.onMarkerClick}
+        name={'Kenyatta International Convention Centre'}
+        />
+        <InfoWindow
+        marker={this.state.activeMarker}
+        visible={this.state.showingInfoWindow}
+        onClose={this.onClose}
+        >
+        <div>
+        <h4>{this.state.selectedPlace.name}</h4>
+        </div>
+        </InfoWindow>
+        </CurrentMap>
+        <ApplicationRoutes />
+      </>
     );
   }
 
