@@ -1,0 +1,173 @@
+@charset "UTF-8";
+/* estrutura principal */
+.secao {
+  margin-top: 5px;
+  padding: 0 5px 5px 5px;
+}
+.secao--mapa {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.secao__titulo {
+  margin: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: "Segoe UI", "Roboto", arial, sans-serif;
+}
+.secao__titulo--secundario {
+  font-size: 0.7416407865em;
+}
+
+.lateral {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding: 15px 0 0 0;
+  margin: 0;
+}
+.lateral__btnfechar {
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.navegacao {
+  display: none;
+}
+.navegacao__item {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.separador {
+  margin: 0 2px;
+}
+.separador__lista {
+  text-decoration: unset;
+}
+
+/* estilização do mapa do Google Maps API */
+.mapa {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+}
+.mapa__btnflutuante {
+  background: none white;
+  border: 0px;
+  margin: 5px;
+  padding: 0px;
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 2px;
+  height: 40px;
+  width: 40px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+  overflow: hidden;
+  left: 5px;
+  z-index: 1;
+}
+
+/* estilização dos pontos marcados */
+.pontos {
+  font-size: 0.7416407865em;
+  font-weight: none;
+  font-family: Arial;
+}
+.pontos__item {
+  margin-top: 10px;
+}
+.pontos__link {
+  /* link de pontos com contraste para cumprir o primeiro princípio WCAG - 1 PERCEPTÍVEL */
+  background-color: navy;
+  /*color: white;*/
+  cursor: default;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.pontos__link:hover, .pontos__link:focus, .pontos__link:active {
+  background-color: white;
+  color: navy;
+}
+
+/* estilização dos elementos do formululário */
+.teste {
+  font-size: 2px;
+}
+
+.ponto-form {
+  margin: 10px;
+  font-size: 0.7416407865em;
+  font-weight: none;
+  font-family: Arial;
+}
+.ponto-form__label {
+  font-weight: bold;
+  margin-top: 5px;
+}
+.ponto-form__label--requerido {
+  font-weight: bold;
+}
+.ponto-form__label--sub {
+  font-weight: lighter;
+}
+.ponto-form__campo {
+  margin-top: 5px;
+  width: 287px;
+}
+.ponto-form__campo--desabilitado {
+  margin: 3px 3px 0 0;
+  text-align: right;
+  width: 140px;
+}
+.ponto-form__campo--alerta {
+  display: inline;
+  border-color: coral;
+  /* colocar o icone de alerta */
+}
+.ponto-form__botao {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 451px) {
+  /* $fonte-maior-em: 2em; */
+  /* $fonte-maior-px: 22px; */
+  .navegacao {
+    display: none;
+  }
+
+  .lateral {
+    padding-top: 30px;
+  }
+
+  .pontos__link {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1024px) {
+  .lateral {
+    width: 315px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
